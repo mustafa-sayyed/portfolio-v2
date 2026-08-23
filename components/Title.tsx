@@ -1,6 +1,19 @@
-"use client";
-function Title({ title }: { title: string }) {
-  return <h1 className="text-4xl font-semibold text-left">{title}</h1>;
+type TitleProps = {
+	title: string;
+	index: string;
+};
+
+function Title({ title, index }: TitleProps) {
+	return (
+		<div className="flex items-baseline gap-3">
+			<span className="font-mono text-xs text-muted-foreground">
+				{index}
+			</span>
+			<h2 className="text-sm font-medium uppercase tracking-widest text-foreground">
+				{title}
+			</h2>
+		</div>
+	);
 }
 
 export default Title;

@@ -1,14 +1,12 @@
 "use client";
-import { Button } from "./ui/button";
 import { SiExpress } from "react-icons/si";
-import Title from "./Title";
-import HorizontalLine from "./HorizontalLine";
 import {
-  JavascriptIcon,
   CssIcon,
   DockerIcon,
+  DrizzleIcon,
   GitIcon,
   NodejsIconIcon,
+  PostgresqlIcon,
   PrismaIcon,
   TypescriptIcon,
   ShadcnuiIcon,
@@ -19,119 +17,62 @@ import {
   MongodbIcon,
   NextjsIcon,
   HtmlIcon,
+  JavascriptIcon,
   ReduxIcon,
   RedisIcon,
   NginxIcon,
   MongooseIcon,
 } from "./CustomIcons";
 import { FaGithub } from "react-icons/fa6";
+import Title from "./Title";
 
-const menuWithCustomIcons = [
-  {
-    icon: JavascriptIcon,
-    name: "JavaScript",
-  },
-  {
-    icon: TypescriptIcon,
-    name: "TypeScript",
-  },
-  {
-    icon: NodejsIconIcon,
-    name: "Node.js",
-  },
-  {
-    icon: ReactIcon,
-    name: "React",
-  },
-  {
-    icon: ReactQueryIcon,
-    name: "React Query",
-  },
-  {
-    icon: ReduxIcon,
-    name: "Redux",
-  },
-  {
-    icon: HtmlIcon,
-    name: "HTML",
-  },
-  {
-    icon: CssIcon,
-    name: "CSS",
-  },
-  {
-    icon: TailwindcssIcon,
-    name: "Tailwind CSS",
-  },
-  {
-    icon: ShadcnuiIcon,
-    name: "Shadcn UI",
-  },
-  {
-    icon: MongodbIcon,
-    name: "MongoDB",
-  },
-  {
-    icon: MongooseIcon,
-    name: "Mongoose",
-  },
-  {
-    icon: PrismaIcon,
-    name: "Prisma",
-  },
-  {
-    icon: RedisIcon,
-    name: "Redis",
-  },
-  {
-    icon: GitIcon,
-    name: "Git",
-  },
-  {
-    icon: FaGithub,
-    name: "GitHub",
-  },
-  {
-    icon: GithubActionsIcon,
-    name: "GitHub Actions",
-  },
-  {
-    icon: DockerIcon,
-    name: "Docker",
-  },
-  {
-    icon: NginxIcon,
-    name: "Nginx",
-  },
-  {
-    icon: NextjsIcon,
-    name: "Next.js",
-  },
-  {
-    icon: SiExpress,
-    name: "Express.js",
-  },
+const ICON_SIZE = 16;
+
+const technologies = [
+  { name: "JavaScript", Icon: JavascriptIcon },
+  { name: "TypeScript", Icon: TypescriptIcon },
+  { name: "Node.js", Icon: NodejsIconIcon },
+  { name: "Express.js", Icon: SiExpress },
+  { name: "PostgreSQL", Icon: PostgresqlIcon },
+  { name: "Drizzle ORM", Icon: DrizzleIcon },
+  { name: "MongoDB", Icon: MongodbIcon },
+  { name: "Mongoose", Icon: MongooseIcon },
+  { name: "Prisma", Icon: PrismaIcon },
+  { name: "Redis", Icon: RedisIcon },
+  { name: "HTML", Icon: HtmlIcon },
+  { name: "CSS", Icon: CssIcon },
+  { name: "React", Icon: ReactIcon },
+  { name: "Next.js", Icon: NextjsIcon },
+  { name: "Redux", Icon: ReduxIcon },
+  { name: "React Query", Icon: ReactQueryIcon },
+  { name: "Tailwind CSS", Icon: TailwindcssIcon },
+  { name: "Shadcn UI", Icon: ShadcnuiIcon },
+  { name: "Git", Icon: GitIcon },
+  { name: "GitHub", Icon: FaGithub },
+  { name: "GitHub Actions", Icon: GithubActionsIcon },
+  { name: "Docker", Icon: DockerIcon },
+  { name: "Nginx", Icon: NginxIcon },
 ];
 
 function Technologies() {
   return (
-    <div>
-      <div className="min-h-[70vh]">
-        <Title title="Technologies" />
-        <p className="text-lg font-light mt-2">
-          Here are some of the technologies I work with:
-        </p>
-        <div className="flex flex-wrap gap-2 mt-8">
-          {menuWithCustomIcons.map((item, index) => (
-            <Button key={index} variant={"outline"} className="hover:border-dashed hover:border-2 text-[12px]">
-              <item.icon className="dark:text-white/70" />
-              {item.name}
-            </Button>
-          ))}
-        </div>
+    <section id="technologies" className="mt-28 sm:mt-36">
+      <Title title="Technologies" index="04" />
+
+      <div className="mt-10 flex flex-wrap gap-x-3 gap-y-3">
+        {technologies.map(({ name, Icon }) => (
+          <span
+            key={name}
+            className="inline-flex items-center gap-2 text-sm text-foreground/90 bg-muted border px-2 rounded-md py-1"
+          >
+            <span className="flex size-4 items-center justify-center">
+              <Icon size={ICON_SIZE} className="text-muted-foreground" />
+            </span>
+            {name}
+          </span>
+        ))}
       </div>
-      <HorizontalLine />
-    </div>
+    </section>
   );
 }
 

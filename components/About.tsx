@@ -1,34 +1,37 @@
-"use client";
-import HorizontalLine from "./HorizontalLine";
 import Title from "./Title";
 
 function About() {
 	return (
-		<div>
-			<div className="flex w-full flex-col">
-				<div className="flex flex-col gap-4 font-light">
-					<Title title="About me" />
-					<p>
-						Hey there 👋, I am Mustafa Sayyed, I build products that solve real-world problems.
-						I enjoy building scalable web applications, backend systems, and AI-powered tools.
-						I love understanding how things work under the hood and continuously
-						learning new technologies..
-					</p>
-					<p>
-						What sets me apart is how I learn and build. I don’t like treating
-						technologies as black boxes. I understanding things from first
-						principles. I do experimenting, breaking things, fixing them, and
-						then rebuilding them better.
-					</p>
-					<p>
-						Currently, I am building getissues, an AI powered platform where where AI agents search issues on behalf of the user based on skills and preferences.
-						<br />
-						Check it out here: <a href="https://getissues.tech" target="_blank" className="text-blue-400 hover:underline font-sans font-semibold">https://getissues.tech</a>
-					</p>
-				</div>
+		<section id="about" className="mt-28 sm:mt-36">
+			<Title title="About" index="01" />
+			<div className="mt-6 flex flex-col gap-4 leading-relaxed text-muted-foreground">
+				<p>
+					I&rsquo;m Mustafa Sayyed — a full stack developer who cares about
+					shipping products that solve real problems. My work spans
+					scalable web applications, backend systems, and AI-powered tools.
+				</p>
+				<p>
+					I don&rsquo;t treat technologies as black boxes. I learn from
+					first principles: experiment, break things, fix them, and rebuild
+					them better. That curiosity is what drives how I engineer —
+					understanding the system under the hood before building on top
+					of it.
+				</p>
+				<p>
+					Right now, I&rsquo;m building{" "}
+					<a
+						href="https://getissues.tech"
+						target="_blank"
+						rel="noopener noreferrer"
+						className="text-foreground underline decoration-border underline-offset-4 transition-colors hover:decoration-foreground"
+					>
+						getissues
+					</a>{" "}
+					— an AI-powered platform where agents find open source issues
+					matched to your skills and interests.
+				</p>
 			</div>
-			<HorizontalLine />
-		</div>
+		</section>
 	);
 }
 
