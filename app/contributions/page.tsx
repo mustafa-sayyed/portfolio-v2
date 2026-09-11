@@ -1,7 +1,7 @@
-import { getContributions, type Contribution } from "@/lib/github";
+import { getContributions } from "@/lib/github";
 import { SiteNav } from "@/components/SiteNav";
 import { GithubActivity } from "@/components/GithubActivity";
-import { ContributionLink } from "@/components/ContributionLink";
+import { ContributionsTabs } from "@/components/ContributionsTabs";
 import Title from "@/components/Title";
 
 export const metadata = {
@@ -10,24 +10,14 @@ export const metadata = {
     "Merged and open pull requests, issues, and open source contributions by Mustafa Sayyed.",
 };
 
-function groupByRepo(items: Contribution[]) {
-  const groups = new Map<string, Contribution[]>();
-  for (const item of items) {
-    const list = groups.get(item.repo) ?? [];
-    list.push(item);
-    groups.set(item.repo, list);
-  }
-  return [...groups.entries()];
-}
-
 export default async function ContributionsPage() {
   const contributions = await getContributions();
 
-  const sections = [
-    { title: "Merged Pull Requests", items: contributions?.merged ?? [] },
-    { title: "Open Pull Requests", items: contributions?.open ?? [] },
-    { title: "Issues Created", items: contributions?.issues ?? [] },
-  ].filter((section) => section.items.length > 0);
+  const hasContributions =
+    contributions &&
+    (contributions.merged.length > 0 ||
+      contributions.open.length > 0 ||
+      contributions.issues.length > 0);
 
   return (
     <div className="mx-auto w-full max-w-2xl px-6 pb-4 sm:px-8">
@@ -58,30 +48,19 @@ export default async function ContributionsPage() {
         </p>
       )}
 
-      {contributions && sections.length === 0 && (
+      {contributions && !hasContributions && (
         <p className="mt-20 text-sm text-muted-foreground">
           No public contributions found yet.
         </p>
       )}
 
-      {sections.map((section, sectionIndex) => (
-        <section key={section.title} className="mt-28 sm:mt-36">
-          <Title
-            title={section.title}
-            index={String(sectionIndex + 2).padStart(2, "0")}
-          />
-          {groupByRepo(section.items).map(([repo, prs]) => (
-            <div key={repo} className="mt-12">
-              <h3 className="font-mono text-xs text-muted-foreground">{repo}</h3>
-              <div className="mt-3 flex flex-col">
-                {prs.map((pr) => (
-                  <ContributionLink key={pr.id} {...pr} />
-                ))}
-              </div>
-            </div>
-          ))}
-        </section>
-      ))}
+      {contributions && hasContributions && (
+        <ContributionsTabs
+          merged={contributions.merged}
+          open={contributions.open}
+          issues={contributions.issues}
+        />
+      )}
 
       <footer className="mt-28 border-t border-border py-10">
         <p className="text-xs text-muted-foreground">
