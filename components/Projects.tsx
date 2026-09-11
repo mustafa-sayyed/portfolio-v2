@@ -6,6 +6,29 @@ import { handleClick } from "@/lib/posthog";
 
 const projects = [
 	{
+		name: "OpenMaintainer",
+		links: [
+			{ link: "https://openmaintainer.mustafasayyed.dev", name: "Live" },
+		],
+		githubLink: "https://github.com/mustafa-sayyed/OpenMaintainer",
+		description:
+			"Team of autonomous AI agents that automates routine repository maintenance, guided by maintainer-defined policies.",
+		highlights: [
+			"AI agents triage issues: analyze content, search duplicates, apply labels, and post maintainer-style comments",
+			"Policy engine validates every action before execution and blocks disallowed ones",
+			"Dependabot PR review with auto-merge for eligible minor and patch updates",
+			"Secure event-driven workflow with verified GitHub webhooks",
+		],
+		techStack: [
+			"TypeScript",
+			"Node.js",
+			"Express",
+			"Vercel AI SDK",
+			"Octokit",
+			"Zod",
+		],
+	},
+	{
 		name: "getissues",
 		links: [{ link: "https://getissues.tech", name: "getissues.tech" }],
 		githubLink: "https://github.com/mustafa-sayyed/getissues",
@@ -56,20 +79,6 @@ const projects = [
 			"Azure",
 			"GitHub Actions",
 		],
-	},
-	{
-		name: "WYL — WriteYourLogs",
-		links: [{ link: "https://wyl.mustafasayyed.dev", name: "Live" }],
-		githubLink: "https://github.com/mustafa-sayyed/write-your-logs",
-		description:
-			"A blogging platform built with React.js and Appwrite for backend services, enabling users to create, edit, and share their blogs.",
-		highlights: [
-			"Secure authentication and authorization with Appwrite",
-			"Rich-text editor for creating and formatting blog posts",
-			"Image uploads, database, and file storage on Appwrite",
-			"State management with React Redux",
-		],
-		techStack: ["React.js", "TypeScript", "Appwrite", "Redux", "Tailwind CSS"],
 	},
 ];
 
