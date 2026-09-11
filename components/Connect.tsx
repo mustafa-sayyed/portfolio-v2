@@ -27,7 +27,7 @@ const connectMenus = [
 
 function Connect() {
 	return (
-		<div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2">
+		<div className="mt-8 flex flex-wrap items-center gap-x-1 md:gap-x-6 gap-y-2">
 			{connectMenus.map((menu) => (
 				<a
 					key={menu.name}
