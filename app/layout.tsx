@@ -4,20 +4,20 @@ import "./globals.css";
 import { Providers } from "./providers";
 
 const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+	variable: "--font-geist-sans",
+	subsets: ["latin"],
 });
 
 const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+	variable: "--font-geist-mono",
+	subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-  title: "Mustafa Sayyed — Full Stack Developer",
-  description:
-    "Hey, I'm Mustafa Sayyed. I build scalable web apps, backend systems, and AI-powered tools. 20 • Full Stack Developer • Open Source Contributor.",
-  metadataBase: new URL("https://mustafasayyed.dev"),
+	title: "Mustafa Sayyed — Full Stack Developer",
+	description:
+		"Hey, I'm Mustafa Sayyed. I build scalable web apps, backend systems, and AI-powered tools. 20 • Full Stack Developer • Open Source Contributor.",
+	metadataBase: new URL("https://mustafasayyed.dev"),
   openGraph: {
     title: "Mustafa Sayyed — Full Stack Developer",
     description:
@@ -26,33 +26,42 @@ export const metadata: Metadata = {
     siteName: "Mustafa Sayyed",
     type: "website",
     locale: "en_US",
+    images: [
+      {
+        url: "/og.png",
+        width: 1200,
+        height: 630,
+        alt: "Mustafa Sayyed — Full Stack Developer",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Mustafa Sayyed — Full Stack Developer",
     description:
       "I build scalable web apps, backend systems, and AI-powered tools.",
+    images: ["/og.png"],
   },
-  robots: {
-    index: true,
-    follow: true,
-  },
+	robots: {
+		index: true,
+		follow: true,
+	},
 };
 
 export default function RootLayout({
-  children,
+	children,
 }: Readonly<{
-  children: React.ReactNode;
+	children: React.ReactNode;
 }>) {
-  return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-      suppressHydrationWarning
-    >
-      <body className="min-h-full flex flex-col">
-        <Providers>{children}</Providers>
-      </body>
-    </html>
-  );
+	return (
+		<html
+			lang="en"
+			className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+			suppressHydrationWarning
+		>
+			<body className="min-h-full flex flex-col">
+				<Providers>{children}</Providers>
+			</body>
+		</html>
+	);
 }
