@@ -29,12 +29,12 @@ export default async function Image() {
 					marginBottom: "32px",
 				}}
 			>
-				mustafasayyed.dev
+				Mustafa Sayyed
 			</div>
 			<div
 				style={{
-          display: "flex",
-          flexDirection: "column",
+         			display: "flex",
+          			flexDirection: "column",
 					fontSize: "96px",
 					fontWeight: 600,
 					letterSpacing: "-4px",

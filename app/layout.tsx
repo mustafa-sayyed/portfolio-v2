@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     images: [
       {
-        url: "/og.png",
+        url: "https://mustafasayyed.dev/opengraph-image",
         width: 1200,
         height: 630,
         alt: "Mustafa Sayyed — Full Stack Developer",
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     title: "Mustafa Sayyed — Full Stack Developer",
     description:
       "I build scalable web apps, backend systems, and AI-powered tools.",
-    images: ["/og.png"],
+    images: ["https://mustafasayyed.dev/opengraph-image"],
   },
 	robots: {
 		index: true,
