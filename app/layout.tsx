@@ -18,30 +18,32 @@ export const metadata: Metadata = {
 	description:
 		"Hey, I'm Mustafa Sayyed. I build scalable web apps, backend systems, and AI-powered tools. 20 • Full Stack Developer • Open Source Contributor.",
 	metadataBase: new URL("https://mustafasayyed.dev"),
-  openGraph: {
-    title: "Mustafa Sayyed — Full Stack Developer",
-    description:
-      "I build scalable web apps, backend systems, and AI-powered tools.",
-    url: "https://mustafasayyed.dev",
-    siteName: "Mustafa Sayyed",
-    type: "website",
-    locale: "en_US",
-    images: [
-      {
-        url: "https://mustafasayyed.dev/opengraph-image",
-        width: 1200,
-        height: 630,
-        alt: "Mustafa Sayyed — Full Stack Developer",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Mustafa Sayyed — Full Stack Developer",
-    description:
-      "I build scalable web apps, backend systems, and AI-powered tools.",
-    images: ["https://mustafasayyed.dev/opengraph-image"],
-  },
+	openGraph: {
+		title: "Mustafa Sayyed — Full Stack Developer",
+		description:
+			"I build scalable web apps, backend systems, and AI-powered tools.",
+		url: "https://mustafasayyed.dev",
+		siteName: "Mustafa Sayyed",
+		type: "website",
+		locale: "en_US",
+		images: [
+			{
+				url: "https://mustafasayyed.dev/og.png",
+				width: 1200,
+				height: 630,
+				alt: "Mustafa Sayyed — Full Stack Developer",
+			},
+		],
+	},
+	twitter: {
+		card: "summary_large_image",
+		title: "Mustafa Sayyed — Full Stack Developer",
+		description:
+			"I build scalable web apps, backend systems, and AI-powered tools.",
+		images: "https://mustafasayyed.dev/og.png",
+		site: "https://mustafasayyed.dev",
+		creator: "@_sayyed_mustafa",
+	},
 	robots: {
 		index: true,
 		follow: true,
