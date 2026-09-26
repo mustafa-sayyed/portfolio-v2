@@ -6,14 +6,14 @@ function About() {
 			<Title title="About" index="01" />
 			<div className="mt-6 flex flex-col gap-4 leading-relaxed text-muted-foreground">
 				<p>
-					I&rsquo;m Mustafa Sayyed — a full stack developer who cares about
+					I&rsquo;m Mustafa Sayyed - a full stack developer who cares about
 					shipping products that solve real problems. My work spans
 					scalable web applications, backend systems, and AI-powered tools.
 				</p>
 				<p>
 					I don&rsquo;t treat technologies as black boxes. I learn from
 					first principles: experiment, break things, fix them, and rebuild
-					them better. That curiosity is what drives how I engineer —
+					them better. That curiosity is what drives how I engineer -
 					understanding the system under the hood before building on top
 					of it.
 				</p>
@@ -27,7 +27,7 @@ function About() {
 					>
 						getissues
 					</a>{" "}
-					— an AI-powered platform where agents find open source issues
+					- an AI-powered platform where agents find open source issues
 					matched to your skills and interests.
 				</p>
 			</div>

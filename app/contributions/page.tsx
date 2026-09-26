@@ -5,7 +5,7 @@ import { ContributionsTabs } from "@/components/ContributionsTabs";
 import Title from "@/components/Title";
 
 export const metadata = {
-  title: "Open Source Contributions — Mustafa Sayyed",
+  title: "Open Source Contributions - Mustafa Sayyed",
   description:
     "Merged and open pull requests, issues, and open source contributions by Mustafa Sayyed.",
 };
